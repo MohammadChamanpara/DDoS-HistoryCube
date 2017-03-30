@@ -1,5 +1,8 @@
-# DDoS-STONE
-This project is an implementation of STONE framework which is an effective Distributed Denial of Service (DDoS) defense mechanism.
+# History Cube
+This project is an implementation of History Cube a customization on the STONE framework which is an effective Distributed Denial of Service (DDoS) defense mechanism.
+
+History Cube uses binary memory which is a new idea how to store huge lists of numbers in a compacted fashion and retrievable very fast.
+This approach enabled us not be dependent on Database during the detection process and only rely on the server memory(RAM).
 
 ## DoS Attack
 In computing, a denial-of-service attack (DoS attack) is a cyber-attack where the perpetrator seeks to make a machine or network resource unavailable to its intended users by temporarily or indefinitely disrupting services of a host connected to the Internet.
