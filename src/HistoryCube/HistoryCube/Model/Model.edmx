@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Stone_DBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityType Name="ClusterHistories">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Day" Type="int" Nullable="false" />
+          <Property Name="ClusterPrefix" Type="int" Nullable="false" />
+          <Property Name="W" Type="int" Nullable="false" />
+          <Property Name="T" Type="int" Nullable="false" />
+          <Property Name="F" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GroupClusterHistories">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Day" Type="int" Nullable="false" />
+          <Property Name="GroupNumber" Type="int" Nullable="false" />
+          <Property Name="ClusterPrefix" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GroupRateHistories">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Day" Type="int" Nullable="false" />
+          <Property Name="GroupNumber" Type="int" Nullable="false" />
+          <Property Name="Rate" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GroupRatioHistories">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Day" Type="int" Nullable="false" />
+          <Property Name="GroupNumber" Type="int" Nullable="false" />
+          <Property Name="Ratio" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="Stone_DBModelStoreContainer">
+          <EntitySet Name="ClusterHistories" EntityType="Self.ClusterHistories" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GroupClusterHistories" EntityType="Self.GroupClusterHistories" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GroupRateHistories" EntityType="Self.GroupRateHistories" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GroupRatioHistories" EntityType="Self.GroupRatioHistories" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Stone_DBModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="Stone_DBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="GroupRatioHistories" EntityType="Stone_DBModel.GroupRatioHistory" />
+          <EntitySet Name="GroupClusterHistories" EntityType="Stone_DBModel.GroupClusterHistory" />
+          <EntitySet Name="ClusterHistories" EntityType="Stone_DBModel.ClusterHistory" />
+          <EntitySet Name="GroupRateHistories" EntityType="Stone_DBModel.GroupRateHistory" />
+        </EntityContainer>
+        <EntityType Name="GroupRatioHistory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Day" Type="Int32" Nullable="false" />
+          <Property Name="GroupNumber" Type="Int32" Nullable="false" />
+          <Property Name="Ratio" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GroupClusterHistory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Day" Type="Int32" Nullable="false" />
+          <Property Name="GroupNumber" Type="Int32" Nullable="false" />
+          <Property Name="ClusterPrefix" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ClusterHistory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Day" Type="Int32" Nullable="false" />
+          <Property Name="ClusterPrefix" Type="Int32" Nullable="false" />
+          <Property Name="W" Type="Int32" Nullable="false" />
+          <Property Name="T" Type="Int32" Nullable="false" />
+          <Property Name="F" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GroupRateHistory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Day" Type="Int32" Nullable="false" />
+          <Property Name="GroupNumber" Type="Int32" Nullable="false" />
+          <Property Name="Rate" Type="Int32" Nullable="false" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Stone_DBModelStoreContainer" CdmEntityContainer="Stone_DBEntities">
+          <EntitySetMapping Name="GroupRatioHistories">
+            <EntityTypeMapping TypeName="Stone_DBModel.GroupRatioHistory">
+              <MappingFragment StoreEntitySet="GroupRatioHistories">
+                <ScalarProperty Name="Ratio" ColumnName="Ratio" />
+                <ScalarProperty Name="GroupNumber" ColumnName="GroupNumber" />
+                <ScalarProperty Name="Day" ColumnName="Day" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GroupClusterHistories">
+            <EntityTypeMapping TypeName="Stone_DBModel.GroupClusterHistory">
+              <MappingFragment StoreEntitySet="GroupClusterHistories">
+                <ScalarProperty Name="ClusterPrefix" ColumnName="ClusterPrefix" />
+                <ScalarProperty Name="GroupNumber" ColumnName="GroupNumber" />
+                <ScalarProperty Name="Day" ColumnName="Day" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ClusterHistories">
+            <EntityTypeMapping TypeName="Stone_DBModel.ClusterHistory">
+              <MappingFragment StoreEntitySet="ClusterHistories">
+                <ScalarProperty Name="F" ColumnName="F" />
+                <ScalarProperty Name="T" ColumnName="T" />
+                <ScalarProperty Name="W" ColumnName="W" />
+                <ScalarProperty Name="ClusterPrefix" ColumnName="ClusterPrefix" />
+                <ScalarProperty Name="Day" ColumnName="Day" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GroupRateHistories">
+            <EntityTypeMapping TypeName="Stone_DBModel.GroupRateHistory">
+              <MappingFragment StoreEntitySet="GroupRateHistories">
+                <ScalarProperty Name="Rate" ColumnName="Rate" />
+                <ScalarProperty Name="GroupNumber" ColumnName="GroupNumber" />
+                <ScalarProperty Name="Day" ColumnName="Day" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="UseLegacyProvider" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="Model">
+        <EntityTypeShape EntityType="Stone_DBModel.GroupRatioHistory" Width="1.5" PointX="2.75" PointY="3.75" />
+        <EntityTypeShape EntityType="Stone_DBModel.GroupClusterHistory" Width="1.5" PointX="3.375" PointY="0.75" />
+        <EntityTypeShape EntityType="Stone_DBModel.ClusterHistory" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Stone_DBModel.GroupRateHistory" Width="1.5" PointX="5.375" PointY="0.75" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

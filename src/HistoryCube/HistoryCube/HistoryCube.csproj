@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4C88ECED-E86B-4A19-9473-DEA1EA8A3CFB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HistoryCube</RootNamespace>
+    <AssemblyName>HistoryCube</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationSettings\ApplicationSettings.cs" />
+    <Compile Include="HistoryCubeClasses\BinaryMemory.cs" />
+    <Compile Include="Components\BaseSeparator.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\DataGrid.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\HorizontalSeparator.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\VerticalSeparator.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="HistoryCubeClasses\GroupRateHistory.cs" />
+    <Compile Include="HistoryCubeClasses\GroupRatioHistory.cs" />
+    <Compile Include="HistoryCubeClasses\GroupClusterHistory.cs" />
+    <Compile Include="HistoryCubeClasses\OfflineDB.cs" />
+    <Compile Include="HistoryCubeClasses\PersistThread.cs" />
+    <Compile Include="Model\DB.cs" />
+    <Compile Include="Model\Model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="StoneClasses\AlarmException.cs" />
+    <Compile Include="StoneClasses\AxesBuilder.cs" />
+    <Compile Include="StoneClasses\ConverterInputRecord.cs" />
+    <Compile Include="StoneClasses\DataAggregator.cs" />
+    <Compile Include="StoneClasses\DataAggregatorTuple.cs" />
+    <Compile Include="StoneClasses\DataSetConvertor.cs" />
+    <Compile Include="StoneClasses\FilterComponent.cs" />
+    <Compile Include="StoneClasses\ProfileMaintainer.cs" />
+    <Compile Include="StoneClasses\StoneBaseChanel.cs" />
+    <Compile Include="StoneClasses\StoneSuspiciousChanel.cs" />
+    <Compile Include="StoneClasses\StoneGroupChanel.cs" />
+    <Compile Include="StoneClasses\StoneDay.cs" />
+    <Compile Include="StoneClasses\StoneFeature.cs" />
+    <Compile Include="StoneClasses\DCC.cs" />
+    <Compile Include="StoneClasses\StoneGroup.cs" />
+    <Compile Include="StoneClasses\StoneHandler.cs" />
+    <Compile Include="StoneClasses\StoneCluster.cs" />
+    <Compile Include="StoneClasses\StoneDataset.cs" />
+    <Compile Include="Data\EntityBusiness.cs" />
+    <Compile Include="Data\SortableBindingList.cs" />
+    <Compile Include="Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MessageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MessageForm.Designer.cs">
+      <DependentUpon>MessageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PasswordDialogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PasswordDialogForm.Designer.cs">
+      <DependentUpon>PasswordDialogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseHelpers\ExtensionMethods.cs" />
+    <Compile Include="BaseHelpers\HelperClasses.cs" />
+    <Compile Include="BaseHelpers\HelperMethods.cs" />
+    <Compile Include="StoneClasses\IPGenerator.cs" />
+    <Compile Include="StoneClasses\StoneWindow.cs" />
+    <Compile Include="WidownsHelpers\ExtensionMethods.cs" />
+    <Compile Include="WidownsHelpers\HelperMethods.cs" />
+    <Compile Include="Log\Appenders\BaseLogAppender.cs" />
+    <Compile Include="Log\Appenders\FileLogAppender.cs" />
+    <Compile Include="Log\Appenders\SqlLogAppender.cs" />
+    <Compile Include="Log\Classes\EventLogger.cs" />
+    <Compile Include="Log\Classes\ExceptionWrapper.cs" />
+    <Compile Include="Log\Classes\FrameWrapper.cs" />
+    <Compile Include="Log\Classes\ILogger.cs" />
+    <Compile Include="Log\Classes\InternalEventLogger.cs" />
+    <Compile Include="Log\Classes\LogEvent.cs" />
+    <Compile Include="Log\Classes\LogSearchModel.cs" />
+    <Compile Include="Log\Classes\LogService.cs" />
+    <Compile Include="Log\Classes\LogType.cs" />
+    <Compile Include="Log\Classes\TraceWrapper.cs" />
+    <Compile Include="Log\Model\Partial\SqlLogEvent.cs" />
+    <Compile Include="Log\Model\Partial\SqlLogEventSearchModel.cs" />
+    <Compile Include="Log\Model\SqlModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SqlModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Log\Resources\ExceptionWrapper.Designer.cs" />
+    <Compile Include="Log\Resources\FrameWrapper.Designer.cs" />
+    <Compile Include="Log\Resources\LogEvent.Designer.cs" />
+    <Compile Include="Log\Resources\TraceWrapper.Designer.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="BaseSettings\ApplicationSettingsInstanceBase.cs" />
+    <Compile Include="BaseSettings\ConfigurationSectionHandler.cs" />
+    <Compile Include="BaseSettings\ISettingEnabled.cs" />
+    <Compile Include="BaseSettings\SettingPropertyAttribute.cs" />
+    <Compile Include="BaseSettings\SettingService.cs" />
+    <Compile Include="Threading\LibraryBackgroundThread.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Threading\LibraryBackgroundTimer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="StoneClasses\DataSetTuple.cs" />
+    <EmbeddedResource Include="Forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MessageForm.resx">
+      <DependentUpon>MessageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PasswordDialogForm.resx">
+      <DependentUpon>PasswordDialogForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Log\Resources\ExceptionWrapper.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Log\Resources\FrameWrapper.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Log\Resources\LogEvent.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Log\Resources\TraceWrapper.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <EntityDeploy Include="Log\Model\SqlModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SqlModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="Model\Model.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Properties\DataSources\Stone.Log.Model.SqlLogEntities.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Model\Model.edmx.sql" />
+    <Content Include="Resources\Clear.png" />
+    <Content Include="Resources\Copy.png" />
+    <Content Include="Resources\Error.png" />
+    <Content Include="Resources\Information.png" />
+    <Content Include="Resources\More.png" />
+    <Content Include="Resources\Question.png" />
+    <Content Include="Resources\Refresh.png" />
+    <Content Include="Resources\Refresh_Disable.png" />
+    <Content Include="Resources\Search.png" />
+    <Content Include="Resources\Warning.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
